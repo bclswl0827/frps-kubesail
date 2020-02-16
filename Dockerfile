@@ -5,9 +5,9 @@ RUN apk add --no-cache --virtual .build-deps openssl ca-certificates \
  && tar -xz frp_0.31.2_linux_amd64.tar.gz \
  && mkdir /usr/bin/frps \
  && mv frp_0.31.2_linux_amd64/frps frp_0.31.2_linux_amd64/frps.ini -t /usr/bin/frps \
+ && rm -rf frp_0.31.2_linux_amd64* \
  && chgrp -R 0 /usr/bin/frps \
- && chmod -R g+rwX /usr/bin/frps \
- && rm -rf frp_0.31.2_linux_amd64*
+ && chmod -R g+rwX /usr/bin/frps
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
