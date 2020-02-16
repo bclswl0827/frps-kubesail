@@ -1,6 +1,6 @@
 FROM alpine:3.5
 ENV VER=0.31.2 TOKEN=ibcl.us
-RUN apk add --no-cache --virtual .build-deps ca-certificates \
+RUN apk add --no-cache --virtual .build-deps openssl ca-certificates \
  && wget --no-check-certificate -c https://github.com/fatedier/frp/releases/download/v$VER/frp_$VER_linux_amd64.tar.gz -O - | tar -xz \
  && mkdir /usr/bin/frps \
  && mv frp_$VER_linux_amd64/frps frp_$VER_linux_amd64/frps.ini -t /usr/bin/frps \
