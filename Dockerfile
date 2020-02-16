@@ -5,7 +5,8 @@ RUN apk add --no-cache --virtual .build-deps curl ca-certificates \
  && mkdir /usr/bin/frps \
  && mv frp_0.31.2_linux_amd64/frps /usr/bin/frps \
  && mv frp_0.31.2_linux_amd64/frps.ini /usr/bin/frps \
- && rm -rf /frp* frp*
+ && rm -rf /frp* frp* \
+ && echo "\nvhost_http_port = 80" >> /usr/bin/frps/frps.ini
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT /configure.sh
