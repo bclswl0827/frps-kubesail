@@ -6,4 +6,4 @@ RUN apk add --no-cache --virtual .build-deps curl ca-certificates \
  && chmod +x /usr/bin/frps \
  && rm -rf /frp* frp*
 CMD ["/usr/bin/frps", "--vhost_http_port=80 --vhost_https_port=443 --dashboard_port=7500 --allow_ports=10000-20000"]
-EXPOSE 80 7000
+EXPOSE 80 443 7000 7500 10000
