@@ -5,5 +5,5 @@ RUN apk add --no-cache --virtual .build-deps curl ca-certificates \
  && mv frp_0.31.2_linux_amd64/frps /usr/bin/frps \
  && chmod +x /usr/bin/frps \
  && rm -rf /frp* frp*
-CMD ["/usr/bin/frps", "--vhost_http_port=80 --vhost_https_port=443 --dashboard_port=7500 --allow_ports=10000-20000 --subdomain_host=lhx11187.usw1.kubesail.org"]
+CMD ["/usr/bin/frps", "--token=frp888 --vhost_http_port=80 --vhost_https_port=443 --dashboard_port=7500 --allow_ports=10000-20000 --subdomain_host=lhx11187.usw1.kubesail.org"]
 EXPOSE 80 443 7000 7500 10000
