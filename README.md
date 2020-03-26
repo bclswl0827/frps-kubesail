@@ -8,4 +8,4 @@ Deployments 页面，应用 Frps 的 Network 选项卡中，80 端口（用于�
 
 然后在本地用 Frpc 与 Kubesail 分配的 7000 端口对应的 NAT 地址连接。
 
-因为自用，故没有设置连接用的密码（Token）
+Token=frp888
